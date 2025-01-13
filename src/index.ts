@@ -164,7 +164,8 @@ const startAgents = async () => {
     elizaLogger.log(`Server started on alternate port ${serverPort}`);
   }
 
-  if(process.env.DAEMON_PROCESS !== "true") {
+  const isDaemonProcess = process.env.DAEMON_PROCESS === "true";
+  if(!isDaemonProcess) {
     elizaLogger.log("Chat started. Type 'exit' to quit.");
     const chat = startChat(characters);
     chat();

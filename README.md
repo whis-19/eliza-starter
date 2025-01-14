@@ -25,8 +25,8 @@ cp .env.example .env
 
 ### Add login credentials and keys to .env
 ```
-DISCORD_APPLICATION_ID="000000772361146438"
-DISCORD_API_TOKEN="OTk1MTU1NzcyMzYxMT000000.000000.00000000000000000000000000000000"
+DISCORD_APPLICATION_ID="discord-application-id"
+DISCORD_API_TOKEN="discord-api-token"
 ...
 OPENROUTER_API_KEY="sk-xx-xx-xxx"
 ...

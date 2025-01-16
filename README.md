@@ -12,7 +12,11 @@ To load custom characters instead:
 
 ### Add clients
 ```
+# in character.ts
 clients: [Clients.TWITTER, Clients.DISCORD],
+
+# in character.json
+clients: ["twitter", "discord"]
 ```
 
 ## Duplicate the .env.example template

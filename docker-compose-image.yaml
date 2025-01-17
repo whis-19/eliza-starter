@@ -1,5 +1,6 @@
 services:
     eliza:
+        platform: linux/amd64
         command: ["pnpm", "start", "--character=./characters/eliza.character.json"]
         image: eliza-starter:v1
         stdin_open: true

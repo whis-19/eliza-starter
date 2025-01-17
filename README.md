@@ -70,7 +70,8 @@ docker compose up
 Make sure docker is running.
 
 ```bash
-docker buildx build --platform linux/amd64 -t eliza-starter:v1 .
+# The --load flag ensures the built image is available locally
+docker buildx build --platform linux/amd64 -t eliza-starter:v1 --load .
 ```
 
 #### Edit the docker-compose-image.yaml file with your environment variables

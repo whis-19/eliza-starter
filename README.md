@@ -1,90 +1,22 @@
-# Eliza
+# Eliza Starter
 
-## Edit the character files
+A starter template for building autonomous agents with the Eliza framework.
 
-Open `src/character.ts` to modify the default character. Uncomment and edit.
+## Overview
 
-### Custom characters
+This repository provides everything you need to create your own AI agent using Eliza. You can customize the agent's behavior, connect it to various platforms like Twitter and Discord, and deploy it using Docker.
 
-To load custom characters instead:
-- Use `pnpm start --characters="path/to/your/character.json"`
-- Multiple character files can be loaded simultaneously
+## Quick Start
 
-### Add clients
-```
-# in character.ts
-clients: [Clients.TWITTER, Clients.DISCORD],
+1. Clone this repository
+2. Copy `.env.example` to `.env` and configure your settings
+3. Install dependencies: `pnpm i`
+4. Start your agent: `pnpm start`
 
-# in character.json
-clients: ["twitter", "discord"]
-```
+## Documentation
 
-## Duplicate the .env.example template
+For detailed setup instructions and configuration options, please visit the [Eliza documentation](https://docs.eliza.ai).
 
-```bash
-cp .env.example .env
-```
+## License
 
-\* Fill out the .env file with your own values.
-
-### Add login credentials and keys to .env
-```
-DISCORD_APPLICATION_ID="discord-application-id"
-DISCORD_API_TOKEN="discord-api-token"
-...
-OPENROUTER_API_KEY="sk-xx-xx-xxx"
-...
-TWITTER_USERNAME="username"
-TWITTER_PASSWORD="password"
-TWITTER_EMAIL="your@email.com"
-```
-
-## Install dependencies and start your agent
-
-```bash
-pnpm i && pnpm start
-```
-Note: this requires node to be at least version 22 when you install packages and run the agent.
-
-## Run with Docker
-
-### Build and run Docker Compose (For x86_64 architecture)
-
-#### Edit the docker-compose.yaml file with your environment variables
-
-```yaml
-services:
-    eliza:
-        environment:
-            - OPENROUTER_API_KEY=blahdeeblahblahblah
-```
-
-#### Run the image
-
-```bash
-docker compose up
-```
-
-### Build the image with Mac M-Series or aarch64
-
-Make sure docker is running.
-
-```bash
-# The --load flag ensures the built image is available locally
-docker buildx build --platform linux/amd64 -t eliza-starter:v1 --load .
-```
-
-#### Edit the docker-compose-image.yaml file with your environment variables
-
-```yaml
-services:
-    eliza:
-        environment:
-            - OPENROUTER_API_KEY=blahdeeblahblahblah
-```
-
-#### Run the image
-
-```bash
-docker compose -f docker-compose-image.yaml up
-```
+This project is open source and available under the MIT license.
